@@ -1,0 +1,12 @@
+---
+- hosts: centos
+  become: yes
+  tasks:
+  - name: "installing nginx"
+    package:
+      name: nginx
+      state: present
+  - name: "Ensure the service is started"
+    service:
+      name: nginx
+      state: started
